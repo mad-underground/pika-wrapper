@@ -4,7 +4,7 @@ from importlib.machinery import SourceFileLoader
 
 
 module = SourceFileLoader(
-    "version", os.path.join("aio_pika", "version.py")
+    "version", os.path.join("pika_wrapper", "version.py")
 ).load_module()
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -12,7 +12,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 
 setup(
-    name="rabbitmq-client",
+    name="pika-wrapper",
     version=module.__version__,
     author=module.__author__,
     author_email=module.team_email,
@@ -42,28 +42,12 @@ setup(
         "Programming Language :: Python :: Implementation :: CPython",
     ],
     packages=find_packages(exclude=["tests"]),
-    package_data={"rabbitmq_client": ["requirements.txt"]},
+    package_data={"pika-wrapper": ["requirements.txt"]},
     install_requires=[
         "pika~=1.3.1"
     ],
     python_requires=">3.6, <4",
-    extras_require={
-        "develop": [
-            "aiomisc~=16.0",
-            "coverage!=4.3",
-            "coveralls",
-            "pylava",
-            "pytest",
-            "pytest-cov",
-            "shortuuid",
-            "nox",
-            "sphinx",
-            "sphinx-autobuild",
-            "timeout-decorator",
-            "tox>=2.4",
-        ],
-    },
     project_urls={
-        "Source": "https://github.com/mad-underground/rabbitmq-client",
-    },
+        "Source": "https://github.com/mad-underground/pika-wrapper",
+    }
 )

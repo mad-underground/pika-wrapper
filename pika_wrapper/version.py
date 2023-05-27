@@ -3,7 +3,7 @@ author_info = (("Jeff Landis", "jeff.landis@themadunderground.com"),)
 package_info = "RabbitMQ AMQP client library for Python"
 package_license = "BSD-3-Clause"
 
-team_email = "me@mosquito.su"
+team_email = "jeff.landis@themadunderground.com"
 
 version_info = (0, 1, 0)
 
